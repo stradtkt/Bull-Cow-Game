@@ -1,19 +1,33 @@
 #include <iostream>
 using namespace std;
 
+void PrintIntro();
+string GetGuessAndPrintBack();
+
 
 int main() {
+    PrintIntro();
+    constexpr int NUMBER_OF_TURNS = 5;
+    for(int count; count <= NUMBER_OF_TURNS; count++) {
+        GetGuessAndPrintBack();
+        cout << endl;
+    }
+    cout << endl;
+    return 0;
+}
+
+void PrintIntro() {
     constexpr int WORD_LENGTH = 5;
     cout << "Welcome to the Bulls and Cows game" << endl;
     cout << "Can you guess the " << WORD_LENGTH;
     cout << " letter isogram I'm thinking of?" << endl;
     cout << endl;
+}
 
+string GetGuessAndPrintBack() {
     cout << "Enter your guess: ";
     string Guess;
-    cin >> Guess;
+    getline(cin, Guess);
     cout << "Your guess was: " << Guess << endl;
-
-    cout << endl;
-    return 0;
+    return Guess;
 }
