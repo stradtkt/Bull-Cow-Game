@@ -1,10 +1,14 @@
 #include <iostream>
+#include <string>
+#include "FBullCowGame.h"
 using namespace std;
+using FText = std::string;
+using int32 = int;
 
 void PrintIntro();
 string GetGuessAndPrintBack();
 
-
+FBullCowGame BCGame;
 int main() {
     PrintIntro();
     constexpr int NUMBER_OF_TURNS = 5;
